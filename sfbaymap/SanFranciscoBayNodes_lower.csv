@@ -1,0 +1,10 @@
+id,label,city,population,estAnnualPopulationGrowthPercentage,inFlowWorkerPercentage2Local,outFlowWorkPercentage2Local,Notes
+1,mtv,Mountain View,77646,1.5,10,10,
+2,pa,Palo Alto,66642,1.5,10,10,
+14,fmt,Fremont,224922,1.0,10,10,newark->fremont
+15,mlpt,Milpitas,69783,1.0,10,10,
+16,scl,SantaClara,120245,1.0,10,10,
+17,sjs,SanJose,998537,2.0,10,10,airport and university
+18,snyl,Sunnyvale,147559,1.5,10,10,
+19,cptn,Cupertino,60189,1.5,10,10,
+26,atht,Athetron,7159,0.5,10,10,

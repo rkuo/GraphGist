@@ -1,0 +1,13 @@
+Source,Target,Type,Id,Label,Distance,lanesPerDirection,speedLimit,note-route
+1,2,unDirected,1,hwy-101,5.5,3,55,
+1,18,unDirected,2,hwy-101,2.9,3,55,
+2,26,unDirected,3,hwy-101,4.2,3,55,
+26,14,unDirected,4,brdg-Dumbarton,17.1,3,55,route-84
+14,15,unDirected,26,hwy-880,11.2,3,55,
+16,18,unDirected,28,hwy-101,5.1,3,55,
+16,17,unDirected,29,hwy-87,4.1,3,55,
+16,19,unDirected,30,local,7.4,2,55,
+17,15,unDirected,31,hwy-208,11.8,3,55,
+17,19,unDirected,32,hwy-280,10.3,3,55,
+18,15,unDirected,33,hwy-237,9.9,3,55,
+18,19,unDirected,34,local,3.3,2,55,
