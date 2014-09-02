@@ -1,5 +1,15 @@
 = Learning Cypher
 
+== Objectives
+
+== Scenarios and Use Cases
+
+== Solutions
+
+// console
+=== Data Models/Whiteboards
+==== First Trial: Just Cities and Roads
+
 image:https://raw.githubusercontent.com/rkuo/GraphGist/master/sfbaymap/images/Screen%20Shot%202014-08-28%20at%201.04.39%20AM%20sfbaymodel1simple.png[simple sfbay road map]
 
 //console
