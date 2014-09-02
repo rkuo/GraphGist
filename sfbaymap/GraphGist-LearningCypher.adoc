@@ -1,7 +1,6 @@
 = Learning Cypher
 
-image:: https://www.dropbox.com/s/559ltot193w0tdu/don%20quixote.jpeg[]
-
+image:https://raw.githubusercontent.com/rkuo/GraphGist/master/sfbaymap/images/Screen%20Shot%202014-08-28%20at%201.04.39%20AM%20sfbaymodel1simple.png[simple sfbay road map]
 
 //console
 [source, cypher]
