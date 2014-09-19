@@ -1,3 +1,13 @@
+
+---
+
+title: test
+---
+
+
+[TOC]
+
+
 # Notes for neo4j presentation on 20140919
 
 ## simple model
@@ -8,20 +18,20 @@ refer to [create](http://docs.neo4j.org/chunked/stable/query-create.html) in the
 use json syntax `create (nodeIdentifier: Label {key1: value1, key2: value2})`
 
 #### test
-// create a node with the name = "joe"
+create a node with the name = "joe"
 
 `create (n {name: 'dave'})`
 
 `create (n {name: 'joe', age: 5})`
 
-// use get some data to list the node
+use get some data to list the node
 `match (n) where n.name='joe' return n.age`
 
-// clear database ==> run clear 
-
-// create 3 cities with name and population, and label them as City
+clear database ==> run clear 
 
 #### create sample nodes
+
+create 3 cities with name and population, and label them as City
 
 ```
 CREATE (n01:City {name: 'Mountain View', population: 77646}),
@@ -29,8 +39,10 @@ CREATE (n01:City {name: 'Mountain View', population: 77646}),
     (n18:City {name: 'Sunnyvale', population: 147559})
 ```
 #### get some data from database
-// run get some data
-// find out some property value of a node
+
+run get some data
+
+find out some property value of a node
 `match (n) with n.name = 'Mountain View' as myCity return myCity` this will compare each node and return true/false of the comparision. There are 3 cities, only one match the name, we will get true, false, false. `where` is different from `with`, `match (n) where n.name = 'Mountain View' return n.population` will return the population of Mountain View. 
 
 ### create a link
@@ -103,12 +115,22 @@ OPTIONAL MATCH n-[r]-()
 DELETE r, n;
 ```
 
-Find out which city has school, 
+Or, use `MATCH (n) WHERE id(n) = id`;
+
+```
+MATCH (n) 
+WHERE id(n) = 16332
+OPTIONAL MATCH n-[r]-()
+DELETE r, n;
+```
+
+Find out which city has school;
 
 ```
 MATCH (n:City)-[:has]->(m:School) RETURN n.name, m.name
 ```
-## best route
+## best route (very simple approach)
+
 ### add different relationship train_to, so we can study alternate route later.
 
 ```
