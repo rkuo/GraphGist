@@ -1,13 +1,3 @@
-
----
-
-title: test
----
-
-
-[TOC]
-
-
 # Notes for neo4j presentation on 20140919
 
 ## simple model
@@ -15,7 +5,7 @@ title: test
 
 refer to [create](http://docs.neo4j.org/chunked/stable/query-create.html) in the manual.
 
-use json syntax `create (nodeIdentifier: Label {key1: value1, key2: value2})`
+use the syntax similar to json `create (nodeIdentifier: Label {key1: value1, key2: value2})`
 
 #### test
 create a node with the name = "joe"
@@ -25,6 +15,7 @@ create a node with the name = "joe"
 `create (n {name: 'joe', age: 5})`
 
 use get some data to list the node
+
 `match (n) where n.name='joe' return n.age`
 
 clear database ==> run clear 
@@ -43,7 +34,12 @@ CREATE (n01:City {name: 'Mountain View', population: 77646}),
 run get some data
 
 find out some property value of a node
-`match (n) with n.name = 'Mountain View' as myCity return myCity` this will compare each node and return true/false of the comparision. There are 3 cities, only one match the name, we will get true, false, false. `where` is different from `with`, `match (n) where n.name = 'Mountain View' return n.population` will return the population of Mountain View. 
+
+`match (n) with n.name = 'Mountain View' as myCity return myCity` 
+
+this will compare each node and return true/false of the comparision. There are 3 cities, only one match the name, we will get true, false, false. 
+
+`where` is different from `with`, `match (n) where n.name = 'Mountain View' return n.population` will return the population of Mountain View. 
 
 ### create a link
 To create relationship while creating node, just append the code below. If we create the links separately, we will end up with duplicate nodes.
@@ -69,8 +65,11 @@ MERGE (c)-[r2:connect_to {distance: 2.9}]->(a)
 ```
 
 ### query some data, use match
+
+```
 MATCH (a)-[r:connect_to]->(b)
 WHERE (a.name = 'Mountain View') RETURN b.name, r.distance
+```
 
 ## more nodes
 ### add some different type nodes and connect them with `has`
@@ -88,8 +87,8 @@ Use this code to add school, for Mountain View
 ```
 MATCH (n01: City)
 WHERE n01.name = 'Mountain View' 
-MERGE (s02:School {name: 'Foothill Community College'}) 
-MERGE (n01)-[:has]->(s02)                    	
+MERGE (s02:School {name: 'Foothill Community College'}) // node
+MERGE (n01)-[:has]->(s02)                    	// relationship
 RETURN
 	n01, s02
 ```
@@ -105,7 +104,11 @@ RETURN
 ```
 
 ### query
-To delete a node by ID, `MATCH (n) WHERE id(n) = 16331 DELETE n`; this will not work, there is a relationship.
+To delete a node by ID, 
+
+`MATCH (n) WHERE id(n) = 16331 DELETE n` 
+
+this will not work, there is a relationship.
 
 See [discussion](http://stackoverflow.com/questions/19624414/delete-node-and-relationships-using-cypher-query-over-rest-api), need to delete relationship first.
 
